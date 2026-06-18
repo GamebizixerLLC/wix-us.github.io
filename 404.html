@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            background: #0a0a2e;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .error-container {
+            padding: 40px;
+        }
+        .error-code {
+            font-size: 8rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #ff6b35, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .error-text {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            color: #aaa;
+        }
+        .home-btn {
+            display: inline-block;
+            padding: 14px 40px;
+            background: #ff6b35;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .home-btn:hover {
+            background: #ff4500;
+            transform: scale(1.05);
+        }
+        .lang-links {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        .lang-links a {
+            color: #888;
+            text-decoration: none;
+            padding: 8px 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+        .lang-links a:hover {
+            border-color: #ff6b35;
+            color: #ff6b35;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <div class="error-text">Oops! Page not found.</div>
+        <a href="/" class="home-btn">🏠 Go Home</a>
+        <div class="lang-links">
+            <a href="/en/">English</a>
+            <a href="/fa/">فارسی</a>
+        </div>
+    </div>
+</body>
+</html>

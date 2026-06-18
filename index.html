@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wix-US Games</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0a0a2e, #1a1a4e);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .loader {
+            text-align: center;
+            padding: 40px;
+        }
+        .spinner {
+            border: 5px solid rgba(255, 255, 255, 0.1);
+            border-top: 5px solid #ff6b35;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .loader h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #ff6b35, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .loader p {
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+        .lang-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .lang-links a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        .lang-links a:hover {
+            background: #ff6b35;
+            border-color: #ff6b35;
+            transform: scale(1.05);
+        }
+        .lang-links a.fa-link {
+            border-color: #00d4ff;
+        }
+        .lang-links a.fa-link:hover {
+            background: #00d4ff;
+            border-color: #00d4ff;
+        }
+    </style>
+    <script>
+        // تشخیص خودکار زبان کاربر
+        (function() {
+            var userLang = navigator.language || navigator.userLanguage;
+            var userLangLower = userLang.toLowerCase();
+            
+            // چک کردن زبان فارسی
+            if (userLangLower.startsWith('fa') || userLangLower === 'fa' || userLangLower.includes('ir')) {
+                window.location.href = '/fa/';
+                return;
+            }
+            
+            // چک کردن زبان‌های راست‌به‌چپ دیگر (عربی، عبری)
+            var rtlLangs = ['ar', 'he', 'ur', 'ps', 'sd'];
+            for (var i = 0; i < rtlLangs.length; i++) {
+                if (userLangLower.startsWith(rtlLangs[i])) {
+                    window.location.href = '/fa/';
+                    return;
+                }
+            }
+            
+            // پیش‌فرض: انگلیسی
+            window.location.href = '/en/';
+        })();
+    </script>
+</head>
+<body>
+    <div class="loader">
+        <div class="spinner"></div>
+        <h1>🎮 Wix-US Games</h1>
+        <p>Detecting your language... | در حال تشخیص زبان...</p>
+        <div class="lang-links">
+            <a href="/en/" class="en-link">🇬🇧 English</a>
+            <a href="/fa/" class="fa-link">🇮🇷 فارسی</a>
+        </div>
+    </div>
+</body>
+</html>
