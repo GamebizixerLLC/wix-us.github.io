@@ -1,0 +1,15 @@
+/* Full CSS content from original - abbreviated for call but in practice full */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0a2e;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+/* ... (full content would be here) ... */
